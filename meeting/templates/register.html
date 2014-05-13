@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}会议注册{% endblock %}
+
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block head %}
+    <style>
+        .register tr {
+            text-align: left;
+            padding: 10px 0 10px;
+        }
+
+        .register td {
+            width: 450px;
+        }
+
+        .register th label {
+            float: right;
+            font-size: larger;
+            font-weight: normal;
+            padding-right: 20px;
+        }
+
+        .register input, select {
+            background-color: #FDFAFA;
+            border: solid 1px #ccc;
+            width: 400px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+        .submit {
+            float: left;
+            margin-top: 20px;
+            margin-left: 115px;
+            padding: 10px 15px 10px 15px;
+            background-color: #FDFAFA;
+            border: solid 1px #ccc;
+        }
+
+        .submit:hover {
+            background-color: rgba(241, 174, 174, 0.4);
+        }
+
+        .helptext {
+            float: right;
+            margin-top: -30px;
+            color: #0000ff
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="position">
+        当前位置：
+        <a href="{% url "index" %}">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+        <a href={% url "register" %}>会议注册</a>
+    </div>
+    <div class="clear h20"></div>
+    <div class="fr rightPart">
+        <form action="" method="POST">{% csrf_token %}
+            <table class="register">
+                {{ form.as_table }}
+            </table>
+            <p><input class="submit" type="submit" value="提交报名资料"/></p>
+        </form>
+
+    </div>
+{% endblock %}

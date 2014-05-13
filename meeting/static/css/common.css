@@ -1,0 +1,148 @@
+body
+{
+    font-family: Verdana, Arial;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 0px;
+}
+p, div, ul, li, h3, h4, h5
+{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+img
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    margin: auto;
+    z-index: 0;
+  
+}
+.comm_container
+{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+}
+.container
+{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+}
+.content
+{
+    height: auto;
+}
+
+
+.banner
+{
+    height: 217px;
+    text-align: center;
+}
+
+
+
+.noborder
+{
+    border: 0px;
+}
+.clear
+{
+    clear: both;
+}
+.blue
+{
+    color: #2766A7;
+}
+.red
+{
+    color: #f00;
+}
+
+.h20
+{
+    height: 20px;
+}
+
+.red
+{
+    color: #f00;
+}
+.al
+{
+    text-align: left;
+}
+.ac
+{
+    text-align: center;
+}
+.ar
+{
+    text-align: right;
+}
+
+
+.fl
+{
+    float: left;
+}
+.fr
+{
+    float: right;
+}
+.msgPanel
+{
+    color: #f00;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 30px;
+    line-height: 30px;
+    height: auto;
+}
+
+.clear
+{
+    clear: both; overflow:hidden; line-height:0;
+}
+.h10
+{
+    height: 10px;
+}
+.h40
+{
+    height: 40px;
+}
+a
+{
+    color: #2766A7;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover
+{
+    color: #58B3E2;
+    text-decoration: none;
+}
+li a:hover{
+    color: #58B3E2;
+    text-decoration: underline;
+}
+.ad
+{
+    margin: auto;
+    width: 1000px;;
+    overflow: hidden;
+}
+
+
+.borderP
+{
+    border-bottom: dotted 1px #ccc;
+}
+
+.indent{ text-indent:24px}

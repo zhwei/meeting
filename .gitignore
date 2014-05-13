@@ -5,6 +5,10 @@
 *.pot
 *.pyc
 local_settings.py
+meeting/media/*
+meeting/static/*
+meeting/db/*
+
 
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm

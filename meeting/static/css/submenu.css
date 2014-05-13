@@ -1,0 +1,74 @@
+.comm_container{ position:relative;}
+.submenu a
+{
+    width: 120px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: block; /* padding-left: 30px;     padding-right: 30px;*/
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    bottom: 0px;
+    text-decoration: none;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+}
+.submenu a:hover
+{
+    background-color: #2766A7;
+    color: #fff;
+    text-decoration: none;
+}
+ .submenu
+{
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    width: 120px;
+    height: auto;
+    z-index: 100000;
+    overflow: visible;
+    display:none;
+    
+}
+
+ .submenu a
+{
+
+    
+    display: block;
+    text-align: center;
+    background:#2766A7;
+   
+ 
+ /*
+    filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;        
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+    filter: Alpha(opacity=10);-moz-opacity:.5;opacity:0.5; 		  
+    filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=50) 
+*/
+}
+ .submenu a:hover, .submenu a.tit
+{
+    background:#2766A7;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+     text-decoration:underline;
+    /*
+    filter:alpha(opacity=100);-moz-opacity:1;opacity:1;        
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+    filter: Alpha(opacity=100);-moz-opacity:1;opacity:1; 		  
+    filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=100) 
+*/
+}
+ .submenu1{ left:0px;}
+ .submenu2{ left:120px;}
+ .submenu3{ left:240px;}
+ .submenu4{ left:360px;}
+ .submenu5{ left:480px;}
+ .submenu6{ left:600px;}
+ .submenu7{ left:720px;}
+ .submenu8{ left:840px;}

@@ -1,0 +1,75 @@
+.header
+{
+    height: 137px;
+    text-align: center;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #2766A7;
+    border-bottom: 3px solid #F6BB3B;
+}
+.logoContainer
+{
+    margin: 0px auto;
+    width: 1000px;
+    position: relative;
+    height: 134px;
+}
+
+.logo
+{
+    position: absolute;
+    left: 0px;
+    top: 49px;
+    border: 0px;
+}
+.menu
+{
+    display: block;
+    height: 68px;
+    margin: 0px;
+    background-color: #fff;
+    border-bottom: solid 2px #F3F3F3;
+    overflow:  hidden;
+    text-align: center;
+    line-height: 0px;
+}
+.menuContainer
+{
+    margin-top: 18px;
+    height: 38px;
+    line-height: 0px;
+    overflow: visible;
+    position: relative;
+}
+.menuContainer a
+{
+    width: 120px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    display: block; /* padding-left: 30px;     padding-right: 30px;*/
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    bottom: 0px;
+    text-decoration: none;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+}
+.menuContainer a:hover
+{
+    background-color: #2766A7;
+    color: #fff;
+    text-decoration: none;
+}
+.menuContainer a.mainmenu{ position:absolute; top:0px}
+.menuContainer .mainmenu1{ left:0px;}
+.menuContainer .mainmenu2{ left:120px;}
+.menuContainer .mainmenu3{ left:240px;}
+.menuContainer .mainmenu4{ left:360px;}
+.menuContainer .mainmenu5{ left:480px;}
+.menuContainer .mainmenu6{ left:600px;}
+.menuContainer .mainmenu7{ left:720px;}
+.menuContainer .mainmenu8{ left:840px;}

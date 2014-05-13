@@ -1,0 +1,28 @@
+
+.friendlinks
+{
+	margin:10px 0px;
+	width:930px;
+	height: 32px;
+	color: #555;
+	line-height: 32px;
+    text-align: center;
+    background:url(../images/bg_friendlink.jpg) no-repeat left top;
+}
+.friendlinks a
+{
+
+
+	font-size:12px;
+	color: #555;
+	text-decoration: none;
+	display: inline-block; padding:0px 14px; 	
+	font-weight:bold;
+	background:url(../images/icon_friendlink.jpg) no-repeat 8px center;
+}
+.friendlinks a:hover
+{
+	text-decoration: underline;
+}
+
+

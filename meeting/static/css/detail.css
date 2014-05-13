@@ -1,0 +1,61 @@
+
+.detail
+{
+    line-height: 24px;
+    padding-bottom: 60px;
+}
+.detail p.date
+{
+    text-align: center;
+    color: #888;
+    padding-bottom: 20px;
+}
+.detail h3
+{
+    text-align: center;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 40px;
+}
+
+
+.container p
+{
+    line-height: 24px;
+}
+
+
+p.t1, p.t2
+{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    font-size: 20px;
+    text-indent: 12px;
+}
+p.t1
+{
+    color: #0070C0;
+    background: url(../images/icon_greendisc.jpg) no-repeat left center;
+}
+p.t2
+{
+    line-height:40px;
+    color: #DF8400;
+    font-size: 14px;
+    background: url(../images/icon_arr1.gif) no-repeat left center;
+}
+
+
+.frameplayerContainer
+{
+    text-align: center;
+}
+.frameplayer
+{
+    margin: auto;
+}
+
+

@@ -1,0 +1,65 @@
+        #modalDialog
+        {
+            width: 300px;
+            height: auto;
+            overflow: visible;
+            background: #fbf3e5; /*	border:5px solid #930; */
+            border: 5px solid #58B3E2;
+            border: 5px solid #58B3E2;
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            z-index: 999999;
+            display: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        #modalDialog img
+        {
+            border: 0px;
+        }
+        #modalDialog .text
+        {
+            text-align: center;
+            line-height: 2;
+            color: #855534;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 40px;
+        }
+        #modalDialog p.close
+        {
+            padding: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;            
+            margin: 0px;
+            background-color:#fff;
+            width:16px; height:16px; 
+          
+        }    
+         #modalDialog p.close a
+        {
+
+            display:block;
+            width:14px; height:15px; cursor:pointer;
+            background:url(icon_close.gif) no-repeat center center;
+        }
+        
+        
+        #modalDialog .leftDialog
+        {
+            text-align: left;
+            padding-left: 30px;
+        }
+        form
+        {
+            width: auto;
+            height: auto;
+            margin: 0px auto;
+            text-align: center;
+        }
+        form div
+        {
+            text-align: left;
+        }

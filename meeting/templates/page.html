@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block description %}{{ object.title }}{% endblock %}
+{% block keywords %}{{ object.title }}{% endblock %}
+{% block head %}
+    <style>
+    .page-content, img{
+        max-width: 100%;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="position">
+        当前位置：
+        <a href="/">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+        <a href=''>{{ object.title }}</a>
+    </div>
+    <div class="clear h20"></div>
+    <div class="fl leftPart">
+        <div class="menucontainer" id="floatMenu">
+            <h3>{{ object.title }}</h3>
+            <ul>
+                {% for page in page_list %}
+                <li><a href='{% url "page" page.mark %}'>{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!--menucontainer-->
+    </div>
+    <div class="fr rightPart page-content">
+        <h1>{{ object.title }}</h1>
+        <hr/>
+        {{ object.content|safe }}
+    </div>
+    {#fr rightPart#}
+{% endblock %}

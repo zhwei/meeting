@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}资料下载{% endblock %}
+
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block head %}
+<style>
+.list-download table,tr{width: 100%;}
+.list-download tr{padding: 10px 5px 10px 5px;}
+.list-download tr:hover{background-color: #E0E0E0;}
+.list-download th{float: left;}
+.list-download th:before{content:"> ";font-weight: bolder;color: #999;}
+.list-download td span{float: right; right: 0;}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="position">
+        当前位置：
+        <a href="{% url 'index' %}">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+        <a href="{% url 'download' %}">资料下载</a>
+    </div>
+    <div class="clear h20"></div>
+    <div class="fl leftPart">
+        <div class="menucontainer" id="floatMenu">
+            <h3>资料下载</h3>
+            <ul>
+                {% for page in page_list %}
+                <li><a href='{% url "page" page.mark %}'>{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!--menucontainer-->
+    </div>
+    <div class="fr rightPart">
+        <div class="list-download">
+            <table>
+                {% for d in object_list %}
+                    <tr>
+                        <th><a href="{{ d.document.url }}">{{ d.name }}</a></th>
+                        <td><span>{{ d.created_date |date:"Y-m-d" }}</span></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {#fr rightPart#}
+{% endblock %}

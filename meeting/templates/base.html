@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{% block title %}{% endblock %}-- 会议论坛</title>
+    %}
+    <meta name="keywords" content='{% block keywords %}{% endblock %}'>
+    <meta name="description" content='{% block description %}{% endblock %}'>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <link href="{{ STATIC_URL }}css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ STATIC_URL }}css/header_comm.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ STATIC_URL }}css/position.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ STATIC_URL }}css/list.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ STATIC_URL }}css/detail.css" rel="stylesheet" type="text/css"/>
+    <script src="{{ STATIC_URL }}simditor/scripts/js/jquery.min.js"></script>
+    {% block head %}
+    {% endblock %}
+    <style>
+        .title h1 {
+            color: #ffffff;
+            font-size: 4em;
+            margin-top: 90px;
+            float: left;
+            margin-left: 15%;
+        }
+
+        .flash {
+            background-color: #DAF2FF;
+            padding: 10px 20px 10px 20px;
+            border-radius: 5px;
+        }
+        .flash .close {
+            float: right;
+            margin-top: -25px;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="title">
+        <h1>会议论坛</h1>
+    </div>
+</div>
+<!--header-->
+<div class="comm_container">
+    <div class="menu">
+        <div class="menuContainer">
+            <a class="mainmenu mainmenu1" href="{% url 'index' %}">大会首页</a>
+            <a class="mainmenu mainmenu2" href="{% url 'page' 'description' %}">会议简介</a>
+            <a class="mainmenu mainmenu3" href="{% url 'register' %}">会议注册</a>
+            <a class="mainmenu mainmenu4" href="{% url 'page' 'meeting' %}">会议议程</a>
+            <a class="mainmenu mainmenu5" href="{% url 'page' 'show' %}">参会指南</a>
+            <a class="mainmenu mainmenu6" href="{% url 'download' %}">资料下载</a>
+        </div>
+    </div>
+    <!--menu-->
+    <div class="clear h10"></div>
+    <div class="container">
+        {% if messages %}
+            <div class="flash">
+                {% for message in messages %}<p id="message_{{ forloop.counter }}">{{ message }}</p>{% endfor %}
+                <span class="close"><a href="javascript:close();">x</a></span>
+            </div>
+        {% endif %}
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    <div class="clear"></div>
+    <!--footer-->
+    <div class="footer" style="padding-top: 100px; text-align: center; color: #9A9A9A;">
+        <p style="padding: 20px 0 20px;border-top:solid 1px #B0CEEB;">山东理工大学&copy;教务处现代教育技术中心</p>
+    </div>
+    <!--footer-->
+</div>
+<!--comm_container-->
+{% block footer %}
+{% endblock %}
+<script>
+    function close() {
+        $('.flash').remove()
+    }
+</script>
+</body>
+</html>

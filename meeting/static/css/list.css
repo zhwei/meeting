@@ -1,0 +1,93 @@
+
+.leftPart
+{
+    width: 200px;
+}
+.rightPart
+{
+    width: 740px;
+}
+.leftPart h3,.rightPart h3
+{
+
+    height: 40px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 8px;
+    background: url(../images/bottomline3.jpg) no-repeat left 28px;
+}
+.leftPart h3 img
+{
+    margin: auto;
+}
+.leftPart
+{
+    margin: 0px auto;
+    overflow: visible;
+    height: auto;
+}
+.leftPart ul
+{
+    line-height: 24px;
+}
+.leftPart ul li
+{
+
+    padding-left: 20px;
+    display: block;
+    float: none;  
+    
+
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 8px;
+    /*
+      background:url(../images/bottomline2.jpg) no-repeat left 28px;
+*/
+border-bottom:dotted 1px #ccc;
+    
+}
+.leftPart ul li.on
+{
+    background: url(../images/icon_menu.jpg) no-repeat left 50px;
+}
+.leftPart ul li a
+{
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+}
+
+.leftPart  p{ line-height:24px;text-align:justify; text-justify:inter-ideograph;}
+.leftPart  p.img{ padding:10px 0px; text-align:center;}
+.leftPart  p.img img{ border:solid 2px #ccc; width:210px;}
+
+.rightPart
+{
+    position: relative;
+    line-height: 24px;
+}
+
+.rightPart ul
+{
+    margin: 0px;
+    margin-left: 0px;
+}
+.rightPart ul li
+{
+    padding-left: 20px;
+    background: url(../images/icon_li.jpg) no-repeat 10px 10px;
+}
+
+.rightPart ul li span
+{
+    float: right;
+}
+
+#floatMenu{ width:220px; height:auto; z-index:999; overflow:hidden;}
+

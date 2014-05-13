@@ -1,17 +1,27 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.conf import settings
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
+from ckeditor import urls as ckeditor_urls
+from .controls import views as control_view
+
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'meeting.views.home', name='home'),
     # url(r'^meeting/', include('meeting.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^ckeditor/', include(ckeditor_urls)),
+
+
+    url(r'^$', control_view.Index.as_view(), name='index'),
+    url(r'^page/(?P<page>\w+)$', control_view.Pages.as_view(), name='page'),
+
+    url(r'^register$', control_view.RegisterMeeting.as_view(), name='register'),
+
+    url(r'^download$', control_view.DownloadList.as_view(), name='download'),
+
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

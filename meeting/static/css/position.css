@@ -1,0 +1,22 @@
+.position
+{
+ background-color:#00f;
+	margin: auto;
+	height: 40px;
+	line-height: 40px;
+	color: #333;
+	text-indent: 20px;
+	border-bottom: solid 1px #B0CEEB;
+	background: url(../images/iconHome.gif) no-repeat 0px 12px;
+	text-align: left; /*             margin-top: 2px;                          line-height: 40px;                          background-color: #F4FBE1;             text-align: left;             padding-left: 30px;             */
+}
+.position a
+{
+	color: #333;
+	text-decoration: none;
+}
+.position a:hover
+{
+	color: #333;
+	text-decoration: underline;
+}
