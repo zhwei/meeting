@@ -4,7 +4,7 @@
 __author__ = 'zhwei'
 
 from django.views import generic
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.contrib import messages
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -57,3 +57,10 @@ class DownloadList(generic.ListView):
         context = super(DownloadList, self).get_context_data(**kwargs)
         context['page_list'] = models.Pages.objects.all()
         return context
+
+def serve_file(request, file_id):
+
+    obj = get_object_or_404(models.Download, id=file_id)
+    response = HttpResponse(obj.document.file, content_type="")
+    response['Content-Disposition'] = 'attachment; filename="{}"'.format(obj.name.encode('utf-8'))
+    return response

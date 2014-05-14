@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^register$', control_view.RegisterMeeting.as_view(), name='register'),
 
     url(r'^download$', control_view.DownloadList.as_view(), name='download'),
+    url(r'^download/(?P<file_id>\d+)$', control_view.serve_file, name='file'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

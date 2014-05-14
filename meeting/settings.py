@@ -1,4 +1,5 @@
-# Django settings for meeting project.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import os
 BASE_DIR = os.path.dirname(__file__)
@@ -130,7 +131,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'meeting.controls',
-    "ckeditor"
+    "ckeditor",
 )
 
 # A sample logging configuration. The only tangible logging
@@ -173,3 +174,8 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
+
+# ADMIN_REORDER = (
+#     ('会议管理', ('App1Model1', 'App1Model2', 'App1Model3')),
+#     ('app2', ('App2Model1', 'App2Model2')),
+# )

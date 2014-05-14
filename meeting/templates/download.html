@@ -41,7 +41,7 @@
             <table>
                 {% for d in object_list %}
                     <tr>
-                        <th><a href="{{ d.document.url }}">{{ d.name }}</a></th>
+                        <th><a href="{% url "file" d.id %}">{{ d.name }}</a></th>
                         <td><span>{{ d.created_date |date:"Y-m-d" }}</span></td>
                     </tr>
                 {% endfor %}

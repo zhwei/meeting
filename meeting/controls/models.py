@@ -3,6 +3,9 @@
 
 __author__ = 'zhwei'
 
+import os
+import uuid
+
 from django.db import models
 from ckeditor.fields import RichTextField
 
@@ -32,22 +35,38 @@ class Pages(TimeStampedModel):
 
     class Meta:
         verbose_name = "页面"
+        verbose_name_plural = "  页面"
 
     def __unicode__(self):
         return self.title
 
 
+
+
 class Download(TimeStampedModel):
     """ Download Files
     """
+    def upload_file_name(instance, filename):
+        f, suffix = os.path.splitext(filename)
+        return "files/{0}{1}".format(uuid.uuid4().hex, suffix)
 
-    name = models.CharField(verbose_name='文件名', max_length=256)
+    name = models.CharField(verbose_name='文件名', max_length=256, blank=True,
+                            help_text="不要忘记添加后缀名")
+
+    document = models.FileField(verbose_name='文件', upload_to=upload_file_name)
+
     description = models.TextField(verbose_name='文件描述')
 
-    document = models.FileField(verbose_name='文件', upload_to='files')
 
     class Meta:
         verbose_name = '资料下载'
+        verbose_name_plural = "资料下载"
+
+    def get_file(self, id):
+
+        return self.objects.get(id=id).document
+
+
 
 
 class Members(TimeStampedModel):
@@ -74,7 +93,7 @@ class Members(TimeStampedModel):
     telephone = models.CharField(verbose_name="电话", max_length=13, help_text="必填")
     postcode = models.CharField(verbose_name="邮编", max_length=6, blank=True, null=True)
 
-    stay = models.CharField(verbose_name="住宿", max_length=50, help_text="必填",
+    stay = models.CharField(verbose_name="住宿类型", max_length=50, help_text="必填",
                             default='standard', choices=stay_choices)
 
     arrival_date = models.CharField(verbose_name="计划到达时间", max_length=50, help_text="必填")
@@ -90,6 +109,8 @@ class Members(TimeStampedModel):
 
     class Meta:
         verbose_name = "参会成员"
+        verbose_name_plural = "   参会成员"
+
 
     def __unicode__(self):
         return self.name
