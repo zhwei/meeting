@@ -4,11 +4,13 @@
 __author__ = 'zhwei'
 
 from django.contrib import admin
+from django.core.urlresolvers import reverse
+from django.utils.safestring import mark_safe
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group
 
 import models
 import forms
-from django.core.urlresolvers import reverse
-from django.utils.safestring import mark_safe
 
 class MemberAdmin(admin.ModelAdmin):
 
@@ -56,3 +58,6 @@ class PageAdmin(admin.ModelAdmin):
     list_display = ('title', 'mark', 'updated_date','created_date',)
 
 admin.site.register(models.Pages, PageAdmin)
+
+admin.site.unregister(Site)
+admin.site.unregister(Group)

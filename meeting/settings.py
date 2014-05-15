@@ -175,7 +175,8 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-# ADMIN_REORDER = (
-#     ('会议管理', ('App1Model1', 'App1Model2', 'App1Model3')),
-#     ('app2', ('App2Model1', 'App2Model2')),
+#ADMIN_REORDER = (
+#    ('controls', ('Members', 'Pages', 'Download')),
+#    ("Auth", ("Users", "Groups")), 
+#    ("Sites", ("Sites")),
 # )
