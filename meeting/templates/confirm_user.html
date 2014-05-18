@@ -39,23 +39,15 @@
             background-color: #FDFAFA;
             border: solid 1px #ccc;
         }
-
         .submit:hover {
             background-color: rgba(241, 174, 174, 0.4);
         }
-
         .helptext {
             float: right;
             margin-top: -30px;
             color: #0000ff
         }
-        ul.errorlist {
-            position: absolute;
-            right: -25px;
-            color: #ff0000;
-            font-size: 15px;
-            padding-top: 5px;
-        }
+        .confirm_user{margin-left: 205px;}
     </style>
 {% endblock %}
 
@@ -63,15 +55,25 @@
     <div class="position">
         当前位置：
         <a href="{% url "index" %}">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
-        <a href={% url "register" %}>会议注册</a>
+        <a href={% url "download" %}>下载</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+        <a>验证姓名</a>
     </div>
     <div class="clear h20"></div>
     <div class="fr rightPart">
+        <p style="font-size: 18px; margin-bottom: 30px;">
+            下载文件需要验证您的姓名
+        </p>
         <form action="" method="POST">{% csrf_token %}
             <table class="register">
-                {{ form.as_table }}
+                <tr>
+                    <th><label for="id_name">姓名:</label></th>
+                    <td>
+                        <input id="id_name" maxlength="20" name="name" type="text"/><br/><span
+                            class="helptext">必填</span>
+                    </td>
+                </tr>
             </table>
-            <p><input class="submit" type="submit" value="提交报名资料"/></p>
+            <input class="submit confirm_user" type="submit" value="提交验证"/>
         </form>
 
     </div>

@@ -89,7 +89,7 @@ class Members(TimeStampedModel):
     department = models.CharField(verbose_name='部门名称', max_length=100, help_text="必填")
     duty = models.CharField(verbose_name='职务', max_length=100, help_text="必填")
 
-    email = models.EmailField(verbose_name="Email", help_text="必填")
+    email = models.EmailField(verbose_name="Email", help_text="必填", unique=True)
     telephone = models.CharField(verbose_name="电话", max_length=13, help_text="必填")
     postcode = models.CharField(verbose_name="邮编", max_length=6, blank=True, null=True)
 
@@ -108,7 +108,7 @@ class Members(TimeStampedModel):
                                     blank=True, null=True)
 
     class Meta:
-        verbose_name = "参会成员"
+        verbose_name = "成员"
         verbose_name_plural = "   参会成员"
 
 
@@ -117,8 +117,10 @@ class Members(TimeStampedModel):
 
     def get_sex(self):
         return "男" if self.sex == "man" else "女"
+    def get_yn(self, t):
+        return "是" if t else "否"
 
     def get_choice_content(self, item, value):
         """ 获取choice的真实内容
         """
-        return dict(self.__getattr__("{}_choices".format(item))).get(value, None)
+        return dict(self.__getattribute__("{}_choices".format(item))).get(value, None)

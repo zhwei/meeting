@@ -11,12 +11,14 @@ from django.contrib.auth.models import Group
 
 import models
 import forms
+import actions
 
 class MemberAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'sex', 'unit', 'duty')
     list_filter = ('sex', 'meeting_type','stay','created_date', 'payment')
     search_fields = ('name', )
+    actions = [actions.export_xls, actions.export_csv]
 
 admin.site.register(models.Members, MemberAdmin)
 

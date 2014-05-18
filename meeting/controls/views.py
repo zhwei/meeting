@@ -4,10 +4,12 @@
 __author__ = 'zhwei'
 
 from django.views import generic
-from django.http import Http404, HttpResponse
 from django.contrib import messages
+from django.template import RequestContext
+from django.http import Http404, HttpResponse
+from django.utils.safestring import mark_safe
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response as r2r
 
 import models
 
@@ -60,7 +62,15 @@ class DownloadList(generic.ListView):
 
 def serve_file(request, file_id):
 
-    obj = get_object_or_404(models.Download, id=file_id)
-    response = HttpResponse(obj.document.file, content_type="")
-    response['Content-Disposition'] = 'attachment; filename="{}"'.format(obj.name.encode('utf-8'))
-    return response
+    if request.method == "POST":
+        name = request.POST.get('name', None)
+        try:
+            models.Members.objects.filter(name=name)
+            obj = get_object_or_404(models.Download, id=file_id)
+            response = HttpResponse(obj.document.file, content_type="application/octet-stream")
+            response['Content-Disposition'] = 'attachment; filename="{}"'.format(obj.name.encode('utf-8'))
+            return response
+        except models.Members.DoesNotExist:
+            messages.error(request, mark_safe('<span style="color: red;">用户名不存在，无法下载文件！</span>'))
+
+    return r2r('confirm_user.html', locals(),context_instance=RequestContext(request))
