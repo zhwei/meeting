@@ -58,7 +58,7 @@
     <div class="clear h10"></div>
     <div class="container">
         {% if messages %}
-            <div class="flash" style="text-align: center;">
+            <div class="flash" style="text-align: center;font-size: 14px;">
                 {% for message in messages %}<p id="message_{{ forloop.counter }}">{{ message }}</p>{% endfor %}
                 <span class="close"><a href="javascript:close();">x</a></span>
             </div>

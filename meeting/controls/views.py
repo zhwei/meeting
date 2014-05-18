@@ -64,13 +64,12 @@ def serve_file(request, file_id):
 
     if request.method == "POST":
         name = request.POST.get('name', None)
-        try:
-            models.Members.objects.filter(name=name)
+        if models.Members.objects.filter(name=name).exists():
             obj = get_object_or_404(models.Download, id=file_id)
             response = HttpResponse(obj.document.file, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment; filename="{}"'.format(obj.name.encode('utf-8'))
             return response
-        except models.Members.DoesNotExist:
-            messages.error(request, mark_safe('<span style="color: red;">用户名不存在，无法下载文件！</span>'))
+        else:
+            messages.error(request, mark_safe('<span style="color: red;">用户没有注册会议，无法下载文件！</span>'))
 
     return r2r('confirm_user.html', locals(),context_instance=RequestContext(request))

@@ -1,6 +1,4 @@
 from django.conf.urls import patterns, include, url
-from django.conf.urls.static import static
-from django.conf import settings
 
 from django.contrib import admin
 admin.autodiscover()
@@ -24,5 +22,5 @@ urlpatterns = patterns('',
     url(r'^download$', control_view.DownloadList.as_view(), name='download'),
     url(r'^download/(?P<file_id>\d+)$', control_view.serve_file, name='file'),
 
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
 
