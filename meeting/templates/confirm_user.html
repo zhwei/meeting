@@ -63,6 +63,7 @@
         <p style="font-size: 18px; margin-bottom: 30px;">
             下载文件需要验证您的姓名
         </p>
+        <p>下载文件： <strong style="font-size: 15px;">{{ filename }}</strong></p>
         <form action="" method="POST">{% csrf_token %}
             <table class="register">
                 <tr>
