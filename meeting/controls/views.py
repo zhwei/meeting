@@ -65,8 +65,8 @@ def serve_file(request, file_id):
     obj = get_object_or_404(models.Download, id=file_id)
     filename = obj.name
     if request.method == "POST":
-        name = request.POST.get('name', None)
-        if models.Members.objects.filter(name=name).exists():
+        email = request.POST.get('email', None)
+        if models.Members.objects.filter(email=email).exists():
             response = HttpResponse(obj.document.file, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename.encode('utf-8'))
             return response

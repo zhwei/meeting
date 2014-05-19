@@ -61,16 +61,15 @@
     <div class="clear h20"></div>
     <div class="fr rightPart">
         <p style="font-size: 18px; margin-bottom: 30px;">
-            下载文件需要验证您的姓名
+            下载文件需要输入您的注册邮箱
         </p>
         <p>下载文件： <strong style="font-size: 15px;">{{ filename }}</strong></p>
         <form action="" method="POST">{% csrf_token %}
             <table class="register">
                 <tr>
-                    <th><label for="id_name">姓名:</label></th>
+                    <th><label for="id_email">Email:</label></th>
                     <td>
-                        <input id="id_name" maxlength="20" name="name" type="text"/><br/><span
-                            class="helptext">必填</span>
+                        <input id="id_email" maxlength="200" name="email" type="text"/><br/><span class="helptext">必填</span>
                     </td>
                 </tr>
             </table>
