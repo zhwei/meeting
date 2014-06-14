@@ -62,14 +62,21 @@ class DownloadList(generic.ListView):
 
 def serve_file(request, file_id):
 
+    def render_response(obj, filename):
+        response = HttpResponse(obj.document.file, content_type="application/octet-stream")
+        response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename.encode('utf-8'))
+        return response
+
     obj = get_object_or_404(models.Download, id=file_id)
     filename = obj.name
+
+    if request.user.is_superuser:
+        return render_response(obj, filename)
+
     if request.method == "POST":
         email = request.POST.get('email', None)
         if models.Members.objects.filter(email=email).exists():
-            response = HttpResponse(obj.document.file, content_type="application/octet-stream")
-            response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename.encode('utf-8'))
-            return response
+            return render_response(obj, filename)
         else:
             messages.error(request, mark_safe('<span style="color: red;">用户没有注册会议，无法下载文件！</span>'))
 
